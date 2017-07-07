@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Repositorio.Entidades.Contato>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Página de teste</h2>
+
+@if (Model != null)
+{
+    <fieldset>
+        <legend>&nbsp;</legend>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>SobreNome</th>
+                    <th>Telefone</th>
+                    <th>Ativo</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ContatoID</td>
+                    <td>@item.Nome</td>
+                    <td>@item.SobreNome</td>
+                    <td>@item.Telefone</td>
+                    <td>@item.Ativo</td>
+                </tr>
+            }
+        </table>
+    </fieldset>
+}
